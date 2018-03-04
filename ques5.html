@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<h1>To find the GCD of two numbers</h1>
+<script>
+function show(){
+
+var x,i,gcd,y;
+x=Number(document.getElementById("num").value);  
+y=Number(document.getElementById("num2").value);
+for(i = 1; i <= x && i <= y; ++i)
+	{
+            if(x % i==0 && y % i==0)
+                gcd = i;
+ 	}
+    document.writeln("The GCD of " + x + " and " + y + " is " + gcd);
+    }
+</script>
+</head>
+<body>
+Enter the Number1:
+<input id="num"><br>
+Enter the Number2:
+<input id="num2"><br>
+<button onclick="show()">Check</button><br>
+</body>
+</html>

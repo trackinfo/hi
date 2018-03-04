@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<script>
+function show(){
+
+var i,n,biggest,next_biggest,nr;   
+var arr = Array('20','120','111','215','54','78'),
+biggest = 0;
+next_biggest = 0;
+
+for (i = 0, n = arr.length; i < n; ++i) 
+{
+    nr = +arr[i]; // convert to number first
+
+    if (nr > biggest) 
+    {
+        next_biggest = biggest; // save previous biggest value
+        biggest = nr;
+    } 
+    else if (nr < biggest && nr > next_biggest) 
+    {
+        next_biggest = nr; // new second biggest value
+    }
+}
+document.writeln("The second largest number is:"+ next_biggest);
+}
+</script>
+</head>
+<body>
+Click to check the second largest number:
+<button onclick="show()">Check</button><br>
+</body>
+</html>

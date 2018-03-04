@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<script>
+function show(){
+var fn,mn,ln,ch;
+fn=document.getElementById("fname").value;
+mn=document.getElementById("mname").value;
+ln=document.getElementById("lname").value;
+ch=document.getElementById("ch").value;
+var substr=document.getElementById("substr").value;
+document.writeln(fn + " "+ mn +" "+ ln);
+document.writeln("<br>");
+document.writeln(fn.charAt(0)+". "+mn.charAt(0)+". "+ ln);
+document.writeln("<br>");
+var str=fn.concat(mn);
+var s=str.concat(ln);
+var letter_Count = 0;
+for (var position = 0; position < s.length; position++) 
+{
+	if (s.charAt(position) == ch) 
+      {
+      letter_Count += 1;
+      }
+}
+document.writeln("The number of times "+ch+" appears in the name "+str+ " is: "+ letter_Count);
+document.writeln("<br>");
+
+
+if(s.indexOf(substr)!=-1)
+{
+	document.writeln("Substring "+substr+" is present");
+}
+else
+	document.writeln("Substring "+substr+" is  not present");
+}
+</script>
+</head>
+<body>
+Enter First Name: <input type="text" id="fname"><br>
+Enter Middle Name: <input type="text"  id="mname"><br>
+Enter Last Name: <input type="text"  id="lname"><br>
+Enter character:<input type="text" id="ch"><br>
+Enter Subtring to look for:<input type="text" id="substr"><br>
+<button onclick="show()">Submit</button>
+</body>
+</html>
